@@ -11,5 +11,14 @@ class LessonsController < ApplicationController
   def new
     @lesson = Lesson.new
   end
-  
+
+  def create
+    @lesson = Lesson.new(params[:lesson])
+    if @lesson.save
+      flash[:notice] = "Lesson successfully added!"
+      redirect_to lessons_path
+    else
+      render :new
+    end
+  end
 end
