@@ -1,0 +1,9 @@
+<% content_for(:title, "Section | LHTP")%>
+
+<h1><%= @section.name %></h1>
+
+
+<p><%= link_to "Edit Section", edit_section_path(@section) %></p>
+<p><%= link_to "Delete Section", section_path(@section),
+                               :data => {:confirm => "You sure?!",
+                                     :method => "delete" }%></p>
