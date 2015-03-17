@@ -7,5 +7,7 @@
   <%= f.text_field :text %>
   <%= f.label :number %>
   <%= f.number_field :number %>
+  <%= f.label :section %>
+  <%= select :lesson, :section_id, Section.all.collect {|p| [ p.name, p.id ] }, { include_blank: true } %>
   <%= f.submit %>
 <% end %>
