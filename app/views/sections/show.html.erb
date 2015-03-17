@@ -6,7 +6,7 @@
   <h4>Lessons for this section:</h4>
 
   <ul>
-    <% @section.lessons.each do |lesson| %>
+    <% @section.lessons.order(number: :asc).each do |lesson| %>
     <li>
       <%= link_to lesson.name, lesson_path(lesson) %>
     </li>
