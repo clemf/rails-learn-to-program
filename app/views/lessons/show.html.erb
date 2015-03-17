@@ -1,0 +1,7 @@
+<% content_for(:title, "Lesson | LHTP")%>
+
+<h1><%= @lesson.name %></h1>
+<h4><%= @lesson.text %></h4>
+<h4><%= @lesson.number %></h4>
+
+<p><%= link_to "Edit Lesson", edit_lesson_path(@lesson) %></p>
