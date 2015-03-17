@@ -10,4 +10,10 @@ describe "the add a lesson process" do
     click_on 'Create Lesson'
     expect(page).to have_content 'Lessons'
   end
+
+  it "gives an error message when no name is entered" do
+    visit new_lesson_path
+    click_on 'Create Lesson'
+    expect(page).to have_content "New lesson Error alert! Name can't be blank Name Text Number"
+  end
 end
