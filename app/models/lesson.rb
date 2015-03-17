@@ -7,4 +7,11 @@ class Lesson < ActiveRecord::Base
     next_lesson = Lesson.find_by number: lesson_number
     return next_lesson
   end
+
+  def previous
+    current_lesson = self
+    lesson_number = current_lesson.number - 1
+    previous_lesson = Lesson.find_by number: lesson_number
+    return previous_lesson
+  end
 end
