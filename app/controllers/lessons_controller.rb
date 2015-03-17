@@ -25,5 +25,15 @@ class LessonsController < ApplicationController
   def edit
     @lesson = Lesson.find(params[:id])
   end
-  
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(params[:lesson])
+      flash[:notice] = "Lesson updated!"
+      redirect_to lessons_path
+    else
+      render :edit
+    end
+  end
+
 end
