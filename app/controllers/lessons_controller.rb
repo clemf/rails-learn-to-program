@@ -36,4 +36,10 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    flash[:notice] = "Lesson destroyed!"
+    redirect_to lessons_path
+  end
 end
